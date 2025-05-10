@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>testguy_buddy | Profile</title>
+  <style>
+    body {
+      background-image: url('https://files.catbox.moe/xfqoqt.png');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .profile-card {
+      background-color: #2b2b2b;
+      border-radius: 16px;
+      padding: 20px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      color: white;
+    }
+
+    .profile-card img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .name-badge-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .name-badge-container h2 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .badge-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .badge-icon:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .button-container img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .button-container img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    }
+
+    .titles {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .title img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: #b0b0b0;
+      margin: 0 0 20px;
+      padding: 0 10px;
+    }
+
+    /* New layout for Account Info and Stats */
+    .stats-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .account-info, .stats {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .account-info div, .stats div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .account-info .label, .stats strong {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .account-info .value, .stats span {
+      font-size: 14px;
+      color: #b0b0b0;
+    }
+
+    .stats div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 16px;
+      color: #ffcc00;
+    }
+
+    .stats span {
+      font-size: 14px;
+      color: #b0b0b0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <img class="profile" src="https://files.catbox.moe/fah4hl.png" alt="Profile Picture" />
+
+    <div class="name-badge-container">
+      <img class="badge-icon" src="https://files.catbox.moe/pfflyf.gif" alt="Badge" onclick="playRandomSound()" />
+      <h2>testguy_buddy</h2>
+    </div>
+
+    <div class="button-container">
+      <img src="https://files.catbox.moe/sobfgg.png" alt="Friend Request" onclick="sendFriendRequest()" />
+      <img src="https://files.catbox.moe/240vc6.png" alt="Share Profile" onclick="shareProfile()" />
+      <img src="https://files.catbox.moe/cv1a7q.png" alt="Follow" onclick="followUser()" />
+    </div>
+
+    <div class="titles">
+      <span class="title" style="background-color: #01796f; color: white;">
+        <img src="https://files.catbox.moe/nemtv4.png" alt="Tester Icon" /> Tester
+      </span>
+      <span class="title" style="background-color: #ff3333; color: white;">
+        <img src="https://files.catbox.moe/osaf82.png" alt="Legend Icon" /> Legend Buddy
+      </span>
+      <span class="title" style="background-color: #32cd32; color: white;">
+        <img src="https://files.catbox.moe/5ablo2.png" alt="Buddy Icon" /> Buddy
+      </span>
+      <span class="title" style="background-color: #ffcc00; color: white;">
+        <img src="https://files.catbox.moe/oipnq4.png" alt="VIB Icon" /> VIB
+      </span>
+    </div>
+
+    <!-- Bio Section -->
+    <p class="bio">
+      this is a test of the animated badge with sounds for the legend buddy subscription plan for vib
+      <br><br> account is owned by devs <!-- Empty row added here -->
+      <br><br> yep...
+    </p>
+
+    <!-- Account Info and Stats -->
+    <div class="stats-container">
+      <!-- Account Info (Row 1) -->
+      <div class="account-info">
+        <div><span class="label">Account Age:</span><span class="value">1.5 day</span></div>
+        <div><span class="label">Gender:</span><span class="value">Male</span></div>
+        <div><span class="label">Joined In:</span><span class="value">October 2025</span></div>
+        <div><span class="label">Homeland:</span><span class="value">Russia</span></div>
+      </div>
+      
+      <!-- Stats (Row 2) -->
+      <div class="stats">
+        <div><strong>Buddies</strong><span>0</span></div>
+        <div><strong>Followers</strong><span>0</span></div>
+        <div><strong>Following</strong><span>1</span></div>
+      </div>
+    </div>
+
+    <!-- Audio files -->
+    <audio id="sound1" src="https://files.catbox.moe/a4qeep.mp3" preload="auto"></audio>
+    <audio id="sound2" src="https://files.catbox.moe/0no1se.mp3" preload="auto"></audio>
+    <audio id="sound3" src="https://files.catbox.moe/52kv18.mp3" preload="auto"></audio>
+    <audio id="sound4" src="https://files.catbox.moe/rwavde.mp3" preload="auto"></audio>
+    <audio id="sound5" src="https://files.catbox.moe/ebmmu6.mp3" preload="auto"></audio>
+    <audio id="sound6" src="https://files.catbox.moe/442gf9.mp3" preload="auto"></audio>
+    <audio id="sound7" src="https://files.catbox.moe/0u1r1k.mp3" preload="auto"></audio>
+    <audio id="sound8" src="https://files.catbox.moe/dpjmyd.mp3" preload="auto"></audio>
+    <audio id="sound9" src="https://files.catbox.moe/qw8pe9.mp3" preload="auto"></audio>
+    <audio id="sound10" src="https://files.catbox.moe/mttva6.mp3" preload="auto"></audio>
+  </div>
+
+  <script>
+    function playRandomSound() {
+      const sounds = [
+        document.getElementById('sound1'),
+        document.getElementById('sound2'),
+        document.getElementById('sound3'),
+        document.getElementById('sound4'),
+        document.getElementById('sound5'),
+        document.getElementById('sound6'),
+        document.getElementById('sound7'),
+        document.getElementById('sound8'),
+        document.getElementById('sound9'),
+        document.getElementById('sound10')
+      ];
+      sounds.forEach(s => s.pause());
+      const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+      randomSound.currentTime = 0;
+      randomSound.play();
+    }
+
+    function sendFriendRequest() {
+      alert("Friend request sent to testguy_buddy!");
+    }
+
+    function shareProfile() {
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => alert("Profile link copied!"))
+        .catch(() => alert("Failed to copy link."));
+    }
+
+    function followUser() {
+      alert("You are now following testguy_buddy!");
+    }
+  </script>
+
+</body>
+</html>
